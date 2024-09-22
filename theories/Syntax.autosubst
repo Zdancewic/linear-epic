@@ -1,0 +1,26 @@
+-- terms
+tm   : Type
+-- statements
+stmt : Type 	
+
+-- linearly used resouces
+res : Type
+-- unrestricted resources
+exp : Type
+
+r_scope : Type
+e_scope : Type
+
+list: Functor
+
+-- definition bodies [\r. r1...rn. e1...em. stmts ]
+lam : (bind res in r_scope) -> tm
+rbnd (n:nat) : (bind <n,res> in e_scope) -> r_scope
+ebnd (m:nat) : (bind <m,exp> in "list" (stmt)) -> e_scope
+
+-- statments
+cut : res -> res -> stmt
+tup : res -> "list" (res) -> stmt
+def : res -> tm -> stmt
+nam : res -> exp -> stmt
+app : exp -> res -> stmt

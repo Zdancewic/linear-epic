@@ -1,0 +1,5 @@
+-Q theories Epic
+
+theories/core.v
+theories/fintype.v
+theories/Syntax.v

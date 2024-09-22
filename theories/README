@@ -1,0 +1,9 @@
+The file Syntax.v was generated using coq-autosubst-ocaml with the command:
+
+```
+autosubst -f -o Syntax.v -s coq Syntax.autosubst
+```
+
+- Imports for fintype.v and Syntax.v are changed to include the Epic prefix.
+
+The Syntax.v file does not compile as generated, so it was *manually* updated.
