@@ -3,3 +3,5 @@
 theories/core.v
 theories/fintype.v
 theories/Syntax.v
+theories/FinUtil.v
+theories/Metatheory.v
