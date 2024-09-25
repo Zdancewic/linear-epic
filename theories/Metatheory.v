@@ -62,7 +62,8 @@ Proof.
       + unfold delta. destruct (fin_eqb i1 i2) eqn: He; auto. rewrite fin_eqb_eq in He.        contradiction.
 Qed.
 
-
+Definition one {n} (r : fin n) : fin n -> nat := delta r 1.
+  
   Definition SUM {n} (l : list (fin n -> nat)) : fin n -> nat :=
   List.fold_right sum zero l.
 
@@ -205,6 +206,7 @@ Example tm_id : tm 0 0 :=
                  ([tup (var_res (var_zero))
                      (List.map var_res ([shift (var_zero); shift (var_zero)])%list)]%list))).
 
+(*
 Lemma wf_tm_id : wf_tm 0 0 null tm_id.
 Proof.
   econstructor.
@@ -232,7 +234,7 @@ Proof.
     destruct (fin_eqb var_zero x) eqn:Hx.
     rewrite fin_eqb_eq in Hx.
     subst. fsimpl. 
-          
+*)          
           
                 
     
@@ -258,7 +260,7 @@ Inductive lookup_stmts : forall (n : nat) (m:nat) n' m' , tm n m -> scope n m ->
       (lam (rbnd n' (ebnd m' (body1 ++ [def r t] ++ body2)))) (deeper _ _ n' m' i rest) body.
 
 
-
+(*
 
 Inductive tm_redex (n m : nat) :=
 | lam_r (n' m' : nat) (s : body_redex (n' + S n) (m' + m))
@@ -270,7 +272,7 @@ with body_redex (n m : nat) :=
 
 Scheme mut_tm_path := Induction for tm_path Sort Prop
 with mut_stmts_path := Induction for stmts_path Sort Prop.
-
+*)
 
 
 
